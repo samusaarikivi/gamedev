@@ -2,9 +2,10 @@
 using UnityEngine.UI;
 using DG.Tweening;
 /*
-* Class which every popup with Confirmation and Cancel buttons inherits from.
+* Base class which every popup with Confirmation and Cancel buttons inherits from.
 * For example Quit game- popup and Login to Google Play Games- popup.
 * DOTween tweening library used for smooth transitions.
+* Blocker is fullscreen image that blocks Input.touches. (!EventSystem.current.IsPointerOverGameObject(touch.fingerId))
 */
 public class Popup : MonoBehaviour
 {
