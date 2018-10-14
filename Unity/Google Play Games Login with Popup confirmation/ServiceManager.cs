@@ -59,11 +59,6 @@ public class ServiceManager : SingletonBehaviour<ServiceManager> {
             return false;
         }
     }
-    /*
-     *  Public methods
-     *  distance: CgkI_LSL0PQcEAIQAQ
-     *  sprint: CgkI_LSL0PQcEAIQAg
-     */
     public void ReportTestScore()
     {
         ReportDistance(7);
@@ -73,7 +68,7 @@ public class ServiceManager : SingletonBehaviour<ServiceManager> {
         if (Social.Active.localUser.authenticated)
         {
             long ltime = (long)(time * 1000);
-            Social.Active.ReportScore(ltime, "CgkI_LSL0PQcEAIQAg", (bool success) =>
+            Social.Active.ReportScore(ltime, "[[ your leaderboard id ]]", (bool success) =>
             {
 
             });
@@ -84,7 +79,7 @@ public class ServiceManager : SingletonBehaviour<ServiceManager> {
     {
         if (Social.Active.localUser.authenticated)
         {
-            Social.Active.ReportScore(distance, "CgkI_LSL0PQcEAIQAQ", (bool success) =>
+            Social.Active.ReportScore(distance, "[[ your leaderboard id ]]", (bool success) =>
             {
 
             });
@@ -101,14 +96,14 @@ public class ServiceManager : SingletonBehaviour<ServiceManager> {
     {
         if (Authenticate())
         {
-            PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkI_LSL0PQcEAIQAg");
+            PlayGamesPlatform.Instance.ShowLeaderboardUI("[[ your leaderboard id ]]");
         }
     }
     public void ShowDistanceLeaderboard()
     {
         if (Authenticate())
         {
-            PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkI_LSL0PQcEAIQAQ",(GooglePlayGames.BasicApi.UIStatus status) => { });
+            PlayGamesPlatform.Instance.ShowLeaderboardUI("[[ your leaderboard id ]]",(GooglePlayGames.BasicApi.UIStatus status) => { });
         }
     }
 }
